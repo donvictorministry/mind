@@ -21,7 +21,6 @@ const RESEARCH_DATA = {
     {
       id: "sec-1",
       number: "01",
-      domain: "Spiritual / Biblical (70%)",
       title: "The Ruach Breath & The Sovereign Spirit of Man",
       content: `In Genesis 2:7, humanity becomes a 'living soul' (Nephesh Chayyah) only when Yahweh breathes His divine breath (Ruach/Neshama) into dust. The mind is not accidental cosmic matter; it is God's sovereign gift designed to commune with the Infinite.
 
@@ -31,7 +30,6 @@ Scripture emphasizes mental posture as the fountain of personal reality: 'For as
     {
       id: "sec-2",
       number: "02",
-      domain: "Spiritual / Biblical (70%)",
       title: "Metanoia: Repentance as Structural Cognitive Rebirth",
       content: `The Biblical doctrine of 'Metanoia' (often translated 'repentance') is radically deeper than emotional remorse. In the original Greek, it denotes a radical, structural overturning of one's entire cognitive perceptual framework.
 
@@ -41,7 +39,6 @@ When Scripture commands believers to set their minds on things above (Colossians
     {
       id: "sec-3",
       number: "03",
-      domain: "Scientific / Empirical (20%)",
       title: "Hebbian Plasticity & The Biological Submission to Thought",
       content: `Modern neuroscience corroborates what Scripture declared millennia ago. The brain is not a rigid biological monument; it is structurally plastic throughout adult life.
 
@@ -51,7 +48,6 @@ Empirical studies demonstrate that focused mental attention drives neuroplastici
     {
       id: "sec-4",
       number: "04",
-      domain: "General Knowledge / Practical (10%)",
       title: "Habitual Architecture, Agency & Daily Stewardship",
       content: `Beyond theological revelation and laboratory neuroscience lies the daily arena of human will and discipline. Human agency demands stewardship over information diets, environmental stimuli, and daily routines.
 
