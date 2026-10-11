@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>The Transformed Mind: Pneumatology, Neuroscience & Agency</title>
+  
+  <!-- Strict Android and Tablet viewport optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Top Android Bar: Left Menu Toggle, Title, Search Trigger, Right Profile Toggle -->
+  <header class="app-header">
+    <button id="btn-left-drawer" class="header-icon-btn" aria-label="Open Table of Contents">
+      <span class="btn-icon">☰</span>
+    </button>
+    
+    <div class="header-center-title">
+      <span class="app-glyph">Ψ</span>
+      <h1 class="header-title">The Transformed Mind</h1>
+    </div>
+
+    <div class="header-actions">
+      <button id="btn-theme-toggle" class="header-icon-btn" aria-label="Toggle Dark Mode">
+        <span id="theme-icon" class="btn-icon">🌙</span>
+      </button>
+      <button id="btn-right-drawer" class="header-icon-btn" aria-label="Open Author Profile">
+        <span class="btn-icon">👤</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Sidebar Drawer (Navigation & Sections) -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <aside id="left-sidebar" class="sidebar-drawer left-drawer" aria-label="Navigation Drawer">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Monograph Index</h2>
+      <button id="close-left-drawer" class="close-drawer-btn" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#view-search" class="drawer-link nav-jump" data-target="view-search">🔍 Fast Search</a>
+      <a href="#sec-hero" class="drawer-link nav-jump" data-target="sec-hero">📖 Scripture & Thesis</a>
+      <a href="#sec-1" class="drawer-link nav-jump" data-target="sec-1">🕊 01. The Ruach Breath (70%)</a>
+      <a href="#sec-2" class="drawer-link nav-jump" data-target="sec-2">⚔ 02. Metanoia & Renewal (70%)</a>
+      <a href="#sec-3" class="drawer-link nav-jump" data-target="sec-3">🔬 03. Hebbian Plasticity (20%)</a>
+      <a href="#sec-4" class="drawer-link nav-jump" data-target="sec-4">🎯 04. Habitual Discipline (10%)</a>
+      <a href="#sec-references" class="drawer-link nav-jump" data-target="sec-references">📚 APA 7th References (10)</a>
+      <a href="#author-section-anchor" class="drawer-link nav-jump" data-target="author-section-anchor">👤 About The Author</a>
+    </nav>
+  </aside>
+
+  <!-- Right Sidebar Drawer (Author & Systems Profile) -->
+  <aside id="right-sidebar" class="sidebar-drawer right-drawer" aria-label="Author Profile Drawer">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Scholar & Builder</h2>
+      <button id="close-right-drawer" class="close-drawer-btn" aria-label="Close author drawer">✕</button>
+    </div>
+    
+    <div class="drawer-content author-drawer-body">
+      <!-- 160px Image with NON-ROTATING photo and ROTATING gear ring around it -->
+      <div class="gear-ring-wrapper">
+        <div class="rotating-gear-ring"></div>
+        <img 
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><circle cx='80' cy='80' r='80' fill='%232563eb'/><text x='80' y='95' font-size='60' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-weight='bold'>Ω</text></svg>" 
+          alt="Author Portrait Placeholder" 
+          class="author-static-photo" 
+          width="160" 
+          height="160"
+        />
+      </div>
+
+      <h3 class="author-name-text" id="drawer-author-name">The Author</h3>
+      <p class="author-roles-text" id="drawer-author-roles">Theologian • Philanthropist • Researcher • Trainer • Full-Stack Developer</p>
+      
+      <div class="author-bio-box">
+        <p id="drawer-author-bio"></p>
+      </div>
+      
+      <div class="author-creed-box">
+        <p id="drawer-author-creed"></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Viewport -->
+  <main id="app-container">
+
+    <!-- Search Section -->
+    <section id="view-search" class="card search-card">
+      <h2 class="section-heading">Search The Treatise</h2>
+      <p class="subtle-paragraph">Query biblical principles, neuroscientific concepts, or APA 7 sources:</p>
+      <div class="search-input-box">
+        <input type="search" id="app-search-input" placeholder="Type here (e.g., Romans, Plasticity, Beck)..." aria-label="Search Monograph">
+      </div>
+      <div id="search-results-box" class="search-results-list"></div>
+    </section>
+
+    <!-- Hero Card (Title & Ratio Breakdown) -->
+    <section id="sec-hero" class="card hero-card">
+      <span class="ratio-badge" id="hero-ratio-badge"></span>
+      <h2 class="treatise-title" id="hero-title"></h2>
+      <p class="treatise-subtitle" id="hero-subtitle"></p>
+      <div class="anchor-verse-box">
+        <span class="verse-label">FOUNDATIONAL SCRIPTURE:</span>
+        <blockquote class="verse-quote">"Do not conform to the pattern of this world, but be transformed by the renewing of your mind." — Romans 12:2</blockquote>
+        <blockquote class="verse-quote">"For as he thinketh in his heart, so is he." — Proverbs 23:7</blockquote>
+      </div>
+    </section>
+
+    <!-- Abstract Card -->
+    <section class="card abstract-card">
+      <h3 class="section-heading">Executive Abstract</h3>
+      <p class="body-text" id="abstract-paragraph"></p>
+    </section>
+
+    <!-- Monograph Content Feed -->
+    <div id="monograph-sections" class="sections-container">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- References Section (10 APA 7) -->
+    <section id="sec-references" class="card references-card">
+      <div class="references-header">
+        <h2 class="section-heading">10 APA 7th References</h2>
+        <span class="count-pill">10 Sources</span>
+      </div>
+      <p class="subtle-paragraph">Rigorous citations spanning theology, contemplative neurobiology, and cognitive science:</p>
+      <div id="references-list" class="references-feed">
+        <!-- Injected by app.js -->
+      </div>
+    </section>
+
+    <!-- In-Page Author Section with the 160px Image & Rotating Gear -->
+    <section id="author-section-anchor" class="card author-card">
+      <span class="ratio-badge">About The Author</span>
+      
+      <div class="gear-ring-wrapper" style="margin-top: 15px;">
+        <div class="rotating-gear-ring"></div>
+        <img 
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><circle cx='80' cy='80' r='80' fill='%232563eb'/><text x='80' y='95' font-size='60' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-weight='bold'>Ω</text></svg>" 
+          alt="Author Portrait Placeholder" 
+          class="author-static-photo" 
+          width="160" 
+          height="160"
+        />
+      </div>
+
+      <h2 class="author-name-text" id="page-author-name"></h2>
+      <p class="author-roles-text" id="page-author-roles"></p>
+      <p class="body-text" id="page-author-bio" style="margin-top: 15px;"></p>
+      
+      <div class="author-creed-box" style="margin-top: 15px;">
+        <p id="page-author-creed"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./contents.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
